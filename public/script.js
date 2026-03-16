@@ -3,6 +3,8 @@
 // Gère tous les navigateurs et permissions
 // ============================================
 
+//Test pull init
+
 // Configuration Socket.IO avec fallback
 const socket = io({
     transports: ['websocket', 'polling'],
