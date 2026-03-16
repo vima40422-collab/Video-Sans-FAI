@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visio Sans FAI - Communication Locale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📹 Visio Sans FAI</h1>
+            <p class="subtitle">Communication vidéo directe - Solution pour l'Afrique</p>
+        </header>
+
+        <div class="connection-panel">
+            <div class="room-controls">
+                <input 
+                    type="text" 
+                    id="room-input" 
+                    placeholder="Nom de la salle (ex: village1)" 
+                    value="salle1"
+                    autocomplete="off"
+                >
+                <button id="join-btn" class="primary-btn">
+                    <span class="btn-icon">🔗</span>
+                    Rejoindre / Créer
+                </button>
+            </div>
+            <div class="connection-status" id="status">
+                <span class="status-indicator"></span>
+                En attente de connexion...
+            </div>
+        </div>
+
+        <div class="videos-container">
+            <div class="video-wrapper local">
+                <div class="video-label">
+                    <span class="label-icon">📷</span>
+                    <span>Toi</span>
+                </div>
+                <video id="local-video" autoplay playsinline muted></video>
+                <div class="video-controls">
+                    <button id="toggle-video" class="control-btn" title="Activer/Désactiver vidéo">
+                        <span>🎥</span>
+                    </button>
+                    <button id="toggle-audio" class="control-btn" title="Activer/Désactiver micro">
+                        <span>🎤</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="video-wrapper remote">
+                <div class="video-label">
+                    <span class="label-icon">👤</span>
+                    <span>Correspondant</span>
+                </div>
+                <video id="remote-video" autoplay playsinline></video>
+                <div class="remote-status" id="remote-status">
+                    En attente d'un correspondant...
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>📡 Mode de communication</h3>
+            <p><strong>Connexion directe</strong> - Les données vidéo ne passent pas par Internet</p>
+            <p class="small">Nécessite d'être sur le même réseau local (WiFi, Ad-Hoc, ou routeur local)</p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
